@@ -1,2 +1,9 @@
 # Quackers
-Not religious, just duck sound
+Not the religious meaning, just duck sound
+
+## Compilation
+```
+qmake main.pro
+make
+./main
+```
