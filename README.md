@@ -5,5 +5,5 @@ Not the religious meaning, just duck sound
 ```
 qmake main.pro
 make
-./main
+./Quackers
 ```
