@@ -1,6 +1,5 @@
 #include <QApplication>
 #include "headers/Accueil.h"
-#include "headers/testf.h"
 
 int main(int argc, char *argv[])
 {
