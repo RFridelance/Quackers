@@ -18,7 +18,9 @@ class Accueil: public QMainWindow {
     private slots:
 
     private:
-    QPushButton *m_bouton;
+    QPushButton *newGame_button;
+    QPushButton *about_button;
+    QPushButton *quit_button;
 };
 
 

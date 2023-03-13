@@ -1,5 +1,6 @@
 #include <QApplication>
-#include "./src/Accueil.h"
+#include "headers/Accueil.h"
+#include "headers/testf.h"
 
 int main(int argc, char *argv[])
 {
@@ -9,5 +10,7 @@ int main(int argc, char *argv[])
     Accueil accueil;
     accueil.setFixedSize(1280, 720);
     accueil.show();
+
+
     return app.exec();
 }
