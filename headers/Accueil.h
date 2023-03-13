@@ -7,6 +7,7 @@
 
 #include <QMainWindow>
 #include <QtWidgets>
+#include "../headers/Menu.h"
 
 class Accueil: public QMainWindow {
 
@@ -18,9 +19,7 @@ class Accueil: public QMainWindow {
     private slots:
 
     private:
-    QPushButton *newGame_button;
-    QPushButton *about_button;
-    QPushButton *quit_button;
+    Menu *menu;
 };
 
 

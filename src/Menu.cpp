@@ -10,7 +10,7 @@
 #include <QtWidgets>
 
 Menu::Menu(QWidget *parent) : QWidget(parent) {
-    setFixedSize(500, 300);
+    //setFixedSize(500, 300);
 
 
     buttonStart = new QPushButton("Gooooo !!!");

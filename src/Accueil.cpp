@@ -7,8 +7,18 @@
 
 Accueil::Accueil() {
 
+    Menu *menu = new Menu(this);
 
-    setCentralWidget(new Menu(this));
+    QTabWidget *tabWidget = new QTabWidget(this);
+    QBoxLayout *layout = new QBoxLayout(QBoxLayout::TopToBottom, tabWidget);
+    layout->addWidget(menu, Qt::AlignCenter);
+    tabWidget->setLayout(layout);
+    tabWidget->setFixedSize(525, 300);
+    tabWidget->setGeometry(375, 100, 80, 30);
+
+
+    //setCentralWidget(tabWidget);
+
 
 }
 
