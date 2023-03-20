@@ -8,6 +8,7 @@
 #include <QMainWindow>
 #include <QtWidgets>
 #include "../headers/Menu.h"
+#include "../headers/Clicker.h"
 
 class Accueil: public QMainWindow {
 
@@ -16,9 +17,12 @@ class Accueil: public QMainWindow {
     public:
         Accueil();
 
-    private slots:
+public slots:
 
-    private:
+    void clear();
+
+
+private:
     Menu *menu;
 };
 

@@ -2,8 +2,8 @@
 // Created by alvann on 30/01/23.
 //
 
-#ifndef FENETRE_HPP
-#define FENETRE_HPP
+#ifndef QUACKERS_MENU_H
+#define QUACKERS_MENU_H
 
 #include <QtWidgets>
 
@@ -13,6 +13,14 @@ class Menu : public QWidget {
 public:
     explicit Menu(QWidget *parent = nullptr);
 
+public slots:
+        void start();
+
+        void about();
+
+        void quit();
+
+
 private:
     QPushButton *buttonStart;
     QPushButton *buttonAbout;
@@ -20,4 +28,4 @@ private:
     QVBoxLayout *buttonLayout;
 };
 
-#endif //INIT_FENETRE_H
+#endif //INIT_QUACKERS_MENU_H

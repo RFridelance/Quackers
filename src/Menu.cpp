@@ -3,6 +3,8 @@
 //
 
 #include "../headers/Menu.h"
+#include "../headers/Clicker.h"
+#include "../headers/Accueil.h"
 #include <QPushButton>
 #include <QApplication>
 #include <QProgressBar>
@@ -14,7 +16,8 @@ Menu::Menu(QWidget *parent) : QWidget(parent) {
 
 
     buttonStart = new QPushButton("Gooooo !!!");
-    QObject::connect(buttonStart, SIGNAL(clicked()), qApp, SLOT(quit()));
+    //QObject::connect(buttonStart, SIGNAL(clicked()), qApp, SLOT(quit()));
+    QObject::connect(buttonStart, &QPushButton::released, this, &Menu::start);
 
     buttonAbout = new QPushButton("About");
     QObject::connect(buttonAbout, SIGNAL(clicked()), qApp, SLOT(quit()));
@@ -27,6 +30,11 @@ Menu::Menu(QWidget *parent) : QWidget(parent) {
     buttonLayout->addWidget(buttonAbout);
     buttonLayout->addWidget(buttonQuit);
 
-
-
 }
+
+void Menu::start() {
+    Clicker *clicker = new Clicker(); //TODO: Ouvrir la fenetre dans le mainWindow
+    clicker->show();
+
+};
+

@@ -7,7 +7,7 @@
 
 Accueil::Accueil() {
 
-    Menu *menu = new Menu(this);
+    menu = new Menu(this);
 
     QTabWidget *tabWidget = new QTabWidget(this);
     QBoxLayout *layout = new QBoxLayout(QBoxLayout::TopToBottom, tabWidget);
@@ -20,5 +20,9 @@ Accueil::Accueil() {
     //setCentralWidget(tabWidget);
 
 
+}
+
+void Accueil::clear() {
+    delete this->centralWidget();
 }
 
