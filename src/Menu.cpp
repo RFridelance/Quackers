@@ -33,8 +33,14 @@ Menu::Menu(QWidget *parent) : QWidget(parent) {
 }
 
 void Menu::start() {
-    Clicker *clicker = new Clicker(); //TODO: Ouvrir la fenetre dans le mainWindow
-    clicker->show();
+    parentWidget()->layout()->addWidget(new Clicker(this));
+    //parentWidget()->layout()->removeWidget(this);
+    this->hide();
+
+    //refresh the window
+    parentWidget()->show();
+
+
 
 };
 

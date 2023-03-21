@@ -7,16 +7,19 @@
 
 #include <QMainWindow>
 #include <QtWidgets>
+#include "Shop.h"
 
 
 class Clicker: public QWidget {
 
     Q_OBJECT
 
+    Shop* shop;
+
     QGridLayout* layout;
 
-    QPushButton* click;
-    QPushButton* shop;
+    QPushButton* buttonClick;
+    QPushButton* buttonShop;
 
     QLabel* ducksLabel;
     QLabel* eggsLabel;
@@ -24,16 +27,21 @@ class Clicker: public QWidget {
     public:
         Clicker(QWidget *parent = nullptr);
 
+    int ducks = 1;
+    int eggs = 0;
+
+
     signals:
 
     public slots:
+
+            void initClicker();
+
             void Clicked();
 
             void openShop();
 
 private :
-    int ducks = 1;
-    int eggs = 0;
 
 };
 
