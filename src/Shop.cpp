@@ -40,7 +40,11 @@ Shop::Shop(QWidget *parent) : QWidget(parent) {
 void Shop::buyDuck() {
     //print dans la console une petit message
     qDebug() << "You bought a duck !";
-    ((Clicker*)(parent())) -> fermier -> setDucks(((Clicker*)(parent())) -> fermier -> getDucks() + 1);
+    //achete un canard s'il a assez d'argent (20)
+    if(((Clicker*)(parent())) -> fermier -> getMoney() >= 20) {
+        ((Clicker*)(parent())) -> fermier -> setMoney(((Clicker*)(parent())) -> fermier -> getMoney() - 20);
+        ((Clicker*)(parent())) -> fermier -> setDucks(((Clicker*)(parent())) -> fermier -> getDucks() + 1);
+    }
 }
 
 //Vend les oeufs

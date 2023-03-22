@@ -24,6 +24,7 @@ class Clicker: public QWidget {
 
     QLabel* ducksLabel;
     QLabel* eggsLabel;
+    QLabel* moneyLabel;
 
     public:
         Clicker(QWidget *parent = nullptr);

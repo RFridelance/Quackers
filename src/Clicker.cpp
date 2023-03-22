@@ -51,8 +51,10 @@ void Clicker::initClicker() {
     //Labels Text pour afficher les valeurs et ajout dans le layout
     ducksLabel = new QLabel("Canards : " + QString::number(fermier->getDucks()));
     eggsLabel = new QLabel("Œeufs : " + QString::number(fermier->getEggs()));
+    moneyLabel = new QLabel("Argent : " + QString::number(fermier->getMoney()));
     layout->addWidget(ducksLabel);
     layout->addWidget(eggsLabel);
+    layout->addWidget(moneyLabel);
 
 
 }
