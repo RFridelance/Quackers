@@ -8,6 +8,7 @@
 #include <QMainWindow>
 #include <QtWidgets>
 #include "Shop.h"
+#include "Fermier.h"
 
 
 class Clicker: public QWidget {
@@ -27,9 +28,7 @@ class Clicker: public QWidget {
     public:
         Clicker(QWidget *parent = nullptr);
 
-    int ducks = 1;
-    int eggs = 0;
-
+    Fermier* fermier;
 
     signals:
 

@@ -4,8 +4,16 @@
 
 #include "../headers/Clicker.h"
 #include "../headers/Shop.h"
+#include "../headers/Fermier.h"
 
 Clicker::Clicker(QWidget *parent) : QWidget(parent) {
+
+    fermier = new Fermier();
+    fermier->setName("Benoit");
+    fermier->setDucks(1);
+    fermier->setEggs(0);
+    fermier->setMoney(0);
+    QDebug(QtDebugMsg) << fermier->getName().c_str();
 
     layout = new QGridLayout();
 
@@ -41,8 +49,8 @@ void Clicker::initClicker() {
 
 
     //Labels Text pour afficher les valeurs et ajout dans le layout
-    ducksLabel = new QLabel("Canards : " + QString::number(ducks));
-    eggsLabel = new QLabel("Œeufs : " + QString::number(eggs));
+    ducksLabel = new QLabel("Canards : " + QString::number(fermier->getDucks()));
+    eggsLabel = new QLabel("Œeufs : " + QString::number(fermier->getEggs()));
     layout->addWidget(ducksLabel);
     layout->addWidget(eggsLabel);
 
@@ -51,18 +59,14 @@ void Clicker::initClicker() {
 
 //Incrémente le nombre d'oeufs en fonctions du nombre de canards
 void Clicker::Clicked() {
-    eggs += ducks;
-    //print dans la console eggs
-    //qDebug() << eggs;
+    fermier->setEggs(fermier->getEggs() + fermier->getDucks());
 
     //Mise à jour des labels
-    eggsLabel->setText("Œeufs : " + QString::number(eggs));
+    eggsLabel->setText("Œeufs : " + QString::number(fermier->getEggs()));
 
 }
 
 void Clicker::openShop() {
-
-    //Todo : ouvrir la fenetre shop pour différents achats
     qDebug() << "You opened the shop !";
 
     //remove all widgets from the layout
