@@ -5,45 +5,158 @@
 #include "../headers/Fermier.h"
 
 
-
-
-//get the name of the farmer
-std::string Fermier::getName() {
-    return name;
+//Retourne le nom du fermier
+std::string Fermier::getNom() {
+    return nom;
 }
 
-//set the name of the farmer
-void Fermier::setName(std::string name) {
-    this->name = name;
+//set le nom du fermier
+void Fermier::setNom(std::string nom) {
+    this->nom = nom;
+}
+//**********************************************************************************************************************
+
+
+//Retourne le nombre de canards du fermier par type
+int Fermier::getCanardPekin() {
+    return canardPekin;
 }
 
-//get the number of ducks of the farmer
-int Fermier::getDucks() {
-    return ducks;
+int Fermier::getCanardColvert() {
+    return canardColvert;
 }
 
-//set the number of ducks of the farmer
-void Fermier::setDucks(int ducks) {
-    this->ducks = ducks;
+int Fermier::getCanardPirate() {
+    return canardPirate;
 }
 
-//get the number of eggs of the farmer
-int Fermier::getEggs() {
-    return eggs;
+int Fermier::getCanardSupporter() {
+    return canardSupporter;
 }
 
-//set the number of eggs of the farmer
-void Fermier::setEggs(int eggs) {
-    this->eggs = eggs;
+int Fermier::getCanardFeu() {
+    return canardFeu;
 }
 
-//get the money of the farmer
-int Fermier::getMoney() {
-    return money;
+int Fermier::getCanardDore() {
+    return canardDore;
 }
 
-//set the money of the farmer
-void Fermier::setMoney(int money) {
-    this->money = money;
+int Fermier::getCanardArcEnCiel() {
+    return canardArcEnCiel;
+}
+
+//Retourne le nombre total de canards du fermier
+
+int Fermier::getAllCanards() {
+    return canardPekin + canardColvert + canardPirate + canardSupporter + canardFeu + canardDore + canardArcEnCiel;
+}
+
+//set le nombre de canards du fermier par type
+void Fermier::setCanardPekin(int canardPekin) {
+    this->canardPekin = canardPekin;
+}
+
+void Fermier::setCanardColvert(int canardColvert) {
+    this->canardColvert = canardColvert;
+}
+
+void Fermier::setCanardPirate(int canardPirate) {
+    this->canardPirate = canardPirate;
+}
+
+void Fermier::setCanardSupporter(int canardSupporter) {
+    this->canardSupporter = canardSupporter;
+}
+
+void Fermier::setCanardFeu(int canardFeu) {
+    this->canardFeu = canardFeu;
+}
+
+void Fermier::setCanardDore(int canardDore) {
+    this->canardDore = canardDore;
+}
+
+void Fermier::setCanardArcEnCiel(int canardArcEnCiel) {
+    this->canardArcEnCiel = canardArcEnCiel;
+}
+
+//**********************************************************************************************************************
+
+
+
+//Retourne le nombre d'oeufs du fermier par type
+int Fermier::getOeufsPekin() {
+    return oeufsPekin;
+}
+
+int Fermier::getOeufsColvert() {
+    return oeufsColvert;
+}
+
+int Fermier::getOeufsPirate() {
+    return oeufsPirate;
+}
+
+int Fermier::getOeufsSupporter() {
+    return oeufsSupporter;
+}
+
+int Fermier::getOeufsFeu() {
+    return oeufsFeu;
+}
+
+int Fermier::getOeufsDore() {
+    return oeufsDore;
+}
+
+int Fermier::getOeufsArcEnCiel() {
+    return oeufsArcEnCiel;
+}
+
+//Retourne le nombre total d'oeufs du fermier
+int Fermier::getAllOeufs() {
+    return oeufsPekin + oeufsColvert + oeufsPirate + oeufsSupporter + oeufsFeu + oeufsDore + oeufsArcEnCiel;
+}
+
+//set le nombre d'oeufs du fermier par type
+void Fermier::setOeufsPekin(int oeufsPekin) {
+    this->oeufsPekin = oeufsPekin;
+}
+
+void Fermier::setOeufsColvert(int oeufsColvert) {
+    this->oeufsColvert = oeufsColvert;
+}
+
+void Fermier::setOeufsPirate(int oeufsPirate) {
+    this->oeufsPirate = oeufsPirate;
+}
+
+void Fermier::setOeufsSupporter(int oeufsSupporter) {
+    this->oeufsSupporter = oeufsSupporter;
+}
+
+void Fermier::setOeufsFeu(int oeufsFeu) {
+    this->oeufsFeu = oeufsFeu;
+}
+
+void Fermier::setOeufsDore(int oeufsDore) {
+    this->oeufsDore = oeufsDore;
+}
+
+void Fermier::setOeufsArcEnCiel(int oeufsArcEnCiel) {
+    this->oeufsArcEnCiel = oeufsArcEnCiel;
+}
+
+//**********************************************************************************************************************
+
+//retourne l'argent du fermier
+int Fermier::getArgent() {
+    return argent;
+}
+
+//set l'argent du fermier
+void Fermier::setArgent(int argent) {
+    this->argent = argent;
 }
 
