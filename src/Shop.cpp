@@ -10,15 +10,36 @@
 
 Shop::Shop(QWidget *parent) : QWidget(parent) {
 
+    //Intialisation du label argent du fermier
+    std::string argent = "Argent : " + std::to_string(((Clicker*)(parent))->fermier -> getArgent());
+    argentLabel = new QLabel(tr(argent.c_str()), this);
+
     //Initialisation du bouton de vente d'oeufs
     buttonSellEggs = new QPushButton(tr("Vendre les Œufs !"), this);
     //Connection du bouton shop
     QObject::connect(buttonSellEggs, &QPushButton::released, this, &Shop::vendreOeufs);
 
-    //Initialisation du bouton d'achat de canard
-    buttonBuyDuck = new QPushButton(tr("Achète une nouvelle canne  !!!"), this);
-    //Connection du bouton de click
-    QObject::connect(buttonBuyDuck, &QPushButton::released, this, &Shop::acheterCanardPekin);
+    //Initialisation des boutons d'achat de canard
+    boutonAcheterCanardPekin = new QPushButton(tr("Achète un nouveau canard Pekin  !!!"), this);
+    QObject::connect(boutonAcheterCanardPekin, &QPushButton::released, this, &Shop::acheterCanardPekin);
+
+    boutonAcheterCanardColvert = new QPushButton(tr("Achète un nouveau canard Colvert  !!!"), this);
+    QObject::connect(boutonAcheterCanardColvert, &QPushButton::released, this, &Shop::acheterCanardColvert);
+
+    boutonAcheterCanardPirate = new QPushButton(tr("Achète un nouveau canard Pirate  !!!"), this);
+    QObject::connect(boutonAcheterCanardPirate, &QPushButton::released, this, &Shop::acheterCanardPirate);
+
+    boutonAcheterCanardSupporter = new QPushButton(tr("Achète un nouveau canard Supporter  !!!"), this);
+    QObject::connect(boutonAcheterCanardSupporter, &QPushButton::released, this, &Shop::acheterCanardSupporter);
+
+    boutonAcheterCanardFeu = new QPushButton(tr("Achète un nouveau canard Feu  !!!"), this);
+    QObject::connect(boutonAcheterCanardFeu, &QPushButton::released, this, &Shop::acheterCanardFeu);
+
+    boutonAcheterCanardDore = new QPushButton(tr("Achète un nouveau canard Doré  !!!"), this);
+    QObject::connect(boutonAcheterCanardDore, &QPushButton::released, this, &Shop::acheterCanardDore);
+
+    boutonAcheterCanardArcEnCiel = new QPushButton(tr("Achète un nouveau canard Arc-en-ciel  !!!"), this);
+    QObject::connect(boutonAcheterCanardArcEnCiel, &QPushButton::released, this, &Shop::acheterCanardArcEnCiel);
 
     //Initialisation du bouton de retour
     buttonBack = new QPushButton(tr("Retour"), this);
@@ -26,11 +47,45 @@ Shop::Shop(QWidget *parent) : QWidget(parent) {
     QObject::connect(buttonBack, &QPushButton::released, this, &Shop::back);
 
 
-
     //Initialisation du layout
     layout = new QGridLayout();
+
     layout->addWidget(buttonSellEggs);
-    layout->addWidget(buttonBuyDuck);
+
+
+    layout->addWidget(boutonAcheterCanardPekin);
+    if (((Clicker*)parent) -> fermier -> getCanardPekin() > 1) {
+        layout->addWidget(boutonAcheterCanardColvert);
+    } else{
+        boutonAcheterCanardColvert->hide();
+    }
+    if (((Clicker*)parent) -> fermier -> getCanardColvert() >= 1) {
+        layout->addWidget(boutonAcheterCanardPirate);
+    } else{
+        boutonAcheterCanardPirate->hide();
+    }
+    if (((Clicker*)parent) -> fermier -> getCanardPirate() >= 1) {
+        layout->addWidget(boutonAcheterCanardSupporter);
+    } else{
+        boutonAcheterCanardSupporter->hide();
+    }
+    if (((Clicker*)parent) -> fermier -> getCanardSupporter() >= 1) {
+        layout->addWidget(boutonAcheterCanardFeu);
+    } else{
+        boutonAcheterCanardFeu->hide();
+    }
+    if (((Clicker*)parent) -> fermier -> getCanardFeu() >= 1) {
+        layout->addWidget(boutonAcheterCanardDore);
+    } else{
+        boutonAcheterCanardDore->hide();
+    }
+    if (((Clicker*)parent) -> fermier -> getCanardDore() >= 1) {
+        layout->addWidget(boutonAcheterCanardArcEnCiel);
+    } else{
+        boutonAcheterCanardArcEnCiel->hide();
+    }
+
+
     layout->addWidget(buttonBack);
     setLayout(layout);
     resize(500, 300);
@@ -39,23 +94,25 @@ Shop::Shop(QWidget *parent) : QWidget(parent) {
 
 //Achète un canard Pekin
 void Shop::acheterCanardPekin() {
-    //print dans la console une petit message
-    qDebug() << "Vous avez acheté un beau canard Pekin !";
     //achete un canard s'il a assez d'argent
     if(((Clicker*)(parent())) -> fermier -> getArgent() >= coutCanardPekin) {
         ((Clicker*)(parent())) -> fermier -> setArgent(((Clicker*)(parent())) -> fermier -> getArgent() - coutCanardPekin);
         ((Clicker*)(parent())) -> fermier -> setCanardPekin(((Clicker*)(parent())) -> fermier -> getCanardPekin() + 1);
+        qDebug() << "Vous avez acheté un beau canard Pekin !";
+    } else {
+        qDebug() << "Vous n'avez pas assez d'argent pour acheter un canard Pekin !";
     }
 }
 
 //Achète un canard Colvert
 void Shop::acheterCanardColvert() {
-    //print dans la console une petit message
-    qDebug() << "Vous avez acheté un beau canard Colvert !";
     //achete un canard s'il a assez d'argent
     if(((Clicker*)(parent())) -> fermier -> getArgent() >= coutCanardColvert) {
         ((Clicker*)(parent())) -> fermier -> setArgent(((Clicker*)(parent())) -> fermier -> getArgent() - coutCanardColvert);
         ((Clicker*)(parent())) -> fermier -> setCanardColvert(((Clicker*)(parent())) -> fermier -> getCanardColvert() + 1);
+        qDebug() << "Vous avez acheté un beau canard Colvert !";
+    } else {
+        qDebug() << "Vous n'avez pas assez d'argent pour acheter un canard Colvert !";
     }
 }
 
@@ -67,6 +124,8 @@ void Shop::acheterCanardPirate() {
     if(((Clicker*)(parent())) -> fermier -> getArgent() >= coutCanardPirate) {
         ((Clicker*)(parent())) -> fermier -> setArgent(((Clicker*)(parent())) -> fermier -> getArgent() - coutCanardPirate);
         ((Clicker*)(parent())) -> fermier -> setCanardPirate(((Clicker*)(parent())) -> fermier -> getCanardPirate() + 1);
+    } else {
+        qDebug() << "Vous n'avez pas assez d'argent pour acheter un canard Pirate !";
     }
 }
 
@@ -78,6 +137,8 @@ void Shop::acheterCanardSupporter() {
     if(((Clicker*)(parent())) -> fermier -> getArgent() >= coutCanardSupporter) {
         ((Clicker*)(parent())) -> fermier -> setArgent(((Clicker*)(parent())) -> fermier -> getArgent() - coutCanardSupporter);
         ((Clicker*)(parent())) -> fermier -> setCanardSupporter(((Clicker*)(parent())) -> fermier -> getCanardSupporter() + 1);
+    } else {
+        qDebug() << "Vous n'avez pas assez d'argent pour acheter un canard Supporter !";
     }
 }
 
@@ -89,6 +150,8 @@ void Shop::acheterCanardFeu() {
     if(((Clicker*)(parent())) -> fermier -> getArgent() >= coutCanardFeu) {
         ((Clicker*)(parent())) -> fermier -> setArgent(((Clicker*)(parent())) -> fermier -> getArgent() - coutCanardFeu);
         ((Clicker*)(parent())) -> fermier -> setCanardFeu(((Clicker*)(parent())) -> fermier -> getCanardFeu() + 1);
+    } else {
+        qDebug() << "Vous n'avez pas assez d'argent pour acheter un canard Feu !";
     }
 }
 
@@ -100,6 +163,8 @@ void Shop::acheterCanardDore() {
     if(((Clicker*)(parent())) -> fermier -> getArgent() >= coutCanardDore) {
         ((Clicker*)(parent())) -> fermier -> setArgent(((Clicker*)(parent())) -> fermier -> getArgent() - coutCanardDore);
         ((Clicker*)(parent())) -> fermier -> setCanardDore(((Clicker*)(parent())) -> fermier -> getCanardDore() + 1);
+    } else {
+        qDebug() << "Vous n'avez pas assez d'argent pour acheter un canard Doré !";
     }
 }
 
@@ -111,6 +176,8 @@ void Shop::acheterCanardArcEnCiel() {
     if(((Clicker*)(parent())) -> fermier -> getArgent() >= coutCanardArcEnCiel) {
         ((Clicker*)(parent())) -> fermier -> setArgent(((Clicker*)(parent())) -> fermier -> getArgent() - coutCanardArcEnCiel);
         ((Clicker*)(parent())) -> fermier -> setCanardArcEnCiel(((Clicker*)(parent())) -> fermier -> getCanardArcEnCiel() + 1);
+    } else {
+        qDebug() << "Vous n'avez pas assez d'argent pour acheter un canard Arc-en-ciel !";
     }
 }
 

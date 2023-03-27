@@ -15,7 +15,16 @@ class Shop: public QWidget {
 
     QGridLayout* layout;
 
-    QPushButton* buttonBuyDuck;
+    QLabel* argentLabel;
+
+    QPushButton* boutonAcheterCanardColvert;
+    QPushButton* boutonAcheterCanardPekin;
+    QPushButton* boutonAcheterCanardPirate;
+    QPushButton* boutonAcheterCanardSupporter;
+    QPushButton* boutonAcheterCanardFeu;
+    QPushButton* boutonAcheterCanardDore;
+    QPushButton* boutonAcheterCanardArcEnCiel;
+
     QPushButton* buttonSellEggs;
     QPushButton* buttonBack;
 
@@ -33,7 +42,7 @@ public:
     int coutCanardArcEnCiel = 2345678;
 
     //valeurs des oeufs
-    int valeurOeufsPekin = 1;
+    int valeurOeufsPekin = 100000;
     int valeurOeufsColvert = 25;
     int valeurOeufsPirate = 100;
     int valeurOeufsSupporter = 750;

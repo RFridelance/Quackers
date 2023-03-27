@@ -65,8 +65,36 @@ void Clicker::initClicker() {
     oeufsArcEnCielLabel = new QLabel("Œeufs Arc-en-ciel: " + QString::number(fermier->getOeufsArcEnCiel()));
 
     argentLabel = new QLabel("Argent : " + QString::number(fermier->getArgent()));
+
+    //ajout dans le layout
     layout->addWidget(canardPekinLabel);
     layout->addWidget(oeufsPekinLabel);
+
+    if (fermier->getCanardColvert() >= 1){
+        layout->addWidget(canardColvertLabel);
+        layout->addWidget(oeufsColvertLabel);
+    }
+    if (fermier->getCanardPirate() >= 1){
+        layout->addWidget(canardPirateLabel);
+        layout->addWidget(oeufsPirateLabel);
+    }
+    if (fermier->getCanardSupporter() >= 1){
+        layout->addWidget(canardSupporterLabel);
+        layout->addWidget(oeufsSupporterLabel);
+    }
+    if (fermier->getCanardFeu() >= 1){
+        layout->addWidget(canardFeuLabel);
+        layout->addWidget(oeufsFeuLabel);
+    }
+    if (fermier->getCanardDore() >= 1){
+        layout->addWidget(canardDoreLabel);
+        layout->addWidget(oeufsDoreLabel);
+    }
+    if (fermier->getCanardArcEnCiel() >= 1){
+        layout->addWidget(canardArcEnCielLabel);
+        layout->addWidget(oeufsArcEnCielLabel);
+    }
+
     layout->addWidget(argentLabel);
 
 
