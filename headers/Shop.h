@@ -25,6 +25,14 @@ class Shop: public QWidget {
     QPushButton* boutonAcheterCanardDore;
     QPushButton* boutonAcheterCanardArcEnCiel;
 
+    QLabel* coutCanardPekinLabel;
+    QLabel* coutCanardColvertLabel;
+    QLabel* coutCanardPirateLabel;
+    QLabel* coutCanardSupporterLabel;
+    QLabel* coutCanardFeuLabel;
+    QLabel* coutCanardDoreLabel;
+    QLabel* coutCanardArcEnCielLabel;
+
     QPushButton* buttonSellEggs;
     QPushButton* buttonBack;
 
@@ -65,6 +73,8 @@ public slots:
     void vendreOeufs();
 
     void back();
+
+    void refreshArgent();
 
 private :
 

@@ -32,12 +32,14 @@ void Clicker::initClicker() {
     }
 
     //Initialisation du bouton de click
-    buttonClick = new QPushButton(tr("Clickeuh !!!"), this);
+    buttonClick = new QPushButton(tr("CLICK !!!"), this);
     //Connection du bouton de click
     QObject::connect(buttonClick, &QPushButton::released, this, &Clicker::Clicked);
+    QSize btnsize = QSize(75, 75);
+    buttonClick->setMinimumSize(btnsize);
 
     //Initialisation du layout
-    layout->addWidget(buttonClick);
+    layout->addWidget(buttonClick,1,0,1,3);
     setLayout(layout);
     resize(500, 300);
 
@@ -45,7 +47,12 @@ void Clicker::initClicker() {
     buttonShop = new QPushButton(tr("Marché"), this);
     //Connection du bouton shop
     QObject::connect(buttonShop, &QPushButton::released, this, &Clicker::openShop);
-    layout->addWidget(buttonShop);
+
+    //Initialisation du bouton quit
+    boutonQuitter = new QPushButton(tr("Quitter"), this);
+    //Connection du bouton quit
+    QObject::connect(boutonQuitter, SIGNAL(clicked()), qApp, SLOT(quit()));
+
 
 
     //Labels Text pour afficher les valeurs et ajout dans le layout
@@ -67,37 +74,38 @@ void Clicker::initClicker() {
     argentLabel = new QLabel("Argent : " + QString::number(fermier->getArgent()));
 
     //ajout dans le layout
-    layout->addWidget(canardPekinLabel);
-    layout->addWidget(oeufsPekinLabel);
+    layout->addWidget(canardPekinLabel, 2, 0);
+    layout->addWidget(oeufsPekinLabel, 2, 1);
 
     if (fermier->getCanardColvert() >= 1){
-        layout->addWidget(canardColvertLabel);
-        layout->addWidget(oeufsColvertLabel);
+        layout->addWidget(canardColvertLabel, 3, 0);
+        layout->addWidget(oeufsColvertLabel, 3, 1);
     }
     if (fermier->getCanardPirate() >= 1){
-        layout->addWidget(canardPirateLabel);
-        layout->addWidget(oeufsPirateLabel);
+        layout->addWidget(canardPirateLabel, 4, 0);
+        layout->addWidget(oeufsPirateLabel, 4, 1);
     }
     if (fermier->getCanardSupporter() >= 1){
-        layout->addWidget(canardSupporterLabel);
-        layout->addWidget(oeufsSupporterLabel);
+        layout->addWidget(canardSupporterLabel, 5, 0);
+        layout->addWidget(oeufsSupporterLabel, 5, 1);
     }
     if (fermier->getCanardFeu() >= 1){
-        layout->addWidget(canardFeuLabel);
-        layout->addWidget(oeufsFeuLabel);
+        layout->addWidget(canardFeuLabel, 6, 0);
+        layout->addWidget(oeufsFeuLabel, 6, 1);
     }
     if (fermier->getCanardDore() >= 1){
-        layout->addWidget(canardDoreLabel);
-        layout->addWidget(oeufsDoreLabel);
+        layout->addWidget(canardDoreLabel, 7, 0);
+        layout->addWidget(oeufsDoreLabel, 7, 1);
     }
     if (fermier->getCanardArcEnCiel() >= 1){
-        layout->addWidget(canardArcEnCielLabel);
-        layout->addWidget(oeufsArcEnCielLabel);
+        layout->addWidget(canardArcEnCielLabel, 8, 0);
+        layout->addWidget(oeufsArcEnCielLabel, 8, 1);
     }
 
-    layout->addWidget(argentLabel);
+    layout->addWidget(argentLabel, 8, 0);
+    layout->addWidget(buttonShop,8, 1);
 
-
+    layout->addWidget(boutonQuitter, 9, 0, 1, 1);
 }
 
 //Incrémente le nombre d'oeufs en fonctions du nombre de canards
@@ -105,12 +113,12 @@ void Clicker::Clicked() {
 
     //Mise à jour des oeufs
     fermier->setOeufsPekin(fermier->getOeufsPekin() + fermier->getCanardPekin());
-    fermier->setCanardColvert(fermier->getCanardColvert() + fermier->getCanardColvert());
-    fermier->setCanardPirate(fermier->getCanardPirate() + fermier->getCanardPirate());
-    fermier->setCanardSupporter(fermier->getCanardSupporter() + fermier->getCanardSupporter());
-    fermier->setCanardFeu(fermier->getCanardFeu() + fermier->getCanardFeu());
-    fermier->setCanardDore(fermier->getCanardDore() + fermier->getCanardDore());
-    fermier->setCanardArcEnCiel(fermier->getCanardArcEnCiel() + fermier->getCanardArcEnCiel());
+    fermier->setOeufsColvert(fermier->getOeufsColvert() + fermier->getCanardColvert());
+    fermier->setOeufsPirate(fermier->getOeufsPirate() + fermier->getCanardPirate());
+    fermier->setOeufsSupporter(fermier->getOeufsSupporter() + fermier->getCanardSupporter());
+    fermier->setOeufsFeu(fermier->getOeufsFeu() + fermier->getCanardFeu());
+    fermier->setOeufsDore(fermier->getOeufsDore() + fermier->getCanardDore());
+    fermier->setOeufsArcEnCiel(fermier->getOeufsArcEnCiel() + fermier->getCanardArcEnCiel());
 
 
     //Mise à jour des labels
@@ -138,7 +146,9 @@ void Clicker::openShop() {
     layout->addWidget(shop);
 
     this->show();
-
 }
+
+
+
 
 

@@ -41,6 +41,8 @@ class Clicker: public QWidget {
 
     QLabel* argentLabel;
 
+    QPushButton* boutonQuitter;
+
     public:
         Clicker(QWidget *parent = nullptr);
 
