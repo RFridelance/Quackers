@@ -25,6 +25,22 @@ class Shop: public QWidget {
     QPushButton* boutonAcheterCanardDore;
     QPushButton* boutonAcheterCanardArcEnCiel;
 
+    QPixmap* canardPekinImage;
+    QPixmap* canardColvertImage;
+    QPixmap* canardPirateImage;
+    QPixmap* canardSupporterImage;
+    QPixmap* canardFeuImage;
+    QPixmap* canardDoreImage;
+    QPixmap* canardArcEnCielImage;
+
+    QLabel* canardPekinImageLabel;
+    QLabel* canardColvertImageLabel;
+    QLabel* canardPirateImageLabel;
+    QLabel* canardSupporterImageLabel;
+    QLabel* canardFeuImageLabel;
+    QLabel* canardDoreImageLabel;
+    QLabel* canardArcEnCielImageLabel;
+
     QLabel* coutCanardPekinLabel;
     QLabel* coutCanardColvertLabel;
     QLabel* coutCanardPirateLabel;

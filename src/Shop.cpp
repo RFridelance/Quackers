@@ -14,6 +14,9 @@ Shop::Shop(QWidget *parent) : QWidget(parent) {
     std::string argent = "Argent : " + std::to_string(((Clicker*)(parent))->fermier -> getArgent()) + " CoinCoins";
     argentLabel = new QLabel(tr(argent.c_str()), this);
 
+    /*
+     * Initialisation de tous les bouton et leurs connections
+     */
     //Initialisation du bouton de vente d'oeufs
     buttonSellEggs = new QPushButton(tr("Vendre les Œufs !"), this);
     //Connection du bouton shop
@@ -55,6 +58,51 @@ Shop::Shop(QWidget *parent) : QWidget(parent) {
     std::string prixCanardArcEnCiel = "Prix : " + std::to_string((coutCanardArcEnCiel)) + " CoinCoins";
     coutCanardArcEnCielLabel = new QLabel(tr(prixCanardArcEnCiel.c_str()), this);
 
+    /*
+    * Import images et labels d'images pour l'affichage des images
+    */
+    QPixmap imageCanardPekin("sprites/duck.png");
+    QLabel *canardPekinImageLabel = new QLabel();
+    canardPekinImageLabel->setPixmap(imageCanardPekin);
+    canardPekinImageLabel->setScaledContents(true);
+    canardPekinImageLabel->setFixedSize(50,50);
+
+    QPixmap imageCanardColvert("sprites/duck2.png");
+    QLabel *canardColvertImageLabel = new QLabel();
+    canardColvertImageLabel->setPixmap(imageCanardColvert);
+    canardColvertImageLabel->setScaledContents(true);
+    canardColvertImageLabel->setFixedSize(50,50);
+
+    QPixmap imageCanardPirate("sprites/duck6.png");
+    QLabel *canardPirateImageLabel = new QLabel();
+    canardPirateImageLabel->setPixmap(imageCanardPirate);
+    canardPirateImageLabel->setScaledContents(true);
+    canardPirateImageLabel->setFixedSize(50,50);
+
+    QPixmap imageCanardSupporter("sprites/duck4.png");
+    QLabel *canardSupporterImageLabel = new QLabel();
+    canardSupporterImageLabel->setPixmap(imageCanardSupporter);
+    canardSupporterImageLabel->setScaledContents(true);
+    canardSupporterImageLabel->setFixedSize(50,50);
+
+    QPixmap imageCanardFeu("sprites/duck7.png");
+    QLabel *canardFeuImageLabel = new QLabel();
+    canardFeuImageLabel->setPixmap(imageCanardFeu);
+    canardFeuImageLabel->setScaledContents(true);
+    canardFeuImageLabel->setFixedSize(50,50);
+
+    QPixmap imageCanardDore("sprites/duck3.png");
+    QLabel *canardDoreImageLabel = new QLabel();
+    canardDoreImageLabel->setPixmap(imageCanardDore);
+    canardDoreImageLabel->setScaledContents(true);
+    canardDoreImageLabel->setFixedSize(50,50);
+
+    QPixmap imageCanardArcEnCiel("sprites/duck5.png");
+    QLabel *canardArcEnCielImageLabel = new QLabel();
+    canardArcEnCielImageLabel->setPixmap(imageCanardArcEnCiel);
+    canardArcEnCielImageLabel->setScaledContents(true);
+    canardArcEnCielImageLabel->setFixedSize(50,50);
+
 
     //Initialisation du bouton de retour
     buttonBack = new QPushButton(tr("Retour"), this);
@@ -66,50 +114,57 @@ Shop::Shop(QWidget *parent) : QWidget(parent) {
     layout = new QGridLayout();
 
     layout->addWidget(buttonSellEggs, 0, 0);
-    layout->addWidget(argentLabel, 0, 1);
+    layout->addWidget(argentLabel, 0, 1, 1, 2);
 
 
     layout->addWidget(boutonAcheterCanardPekin, 1, 0);
-    layout->addWidget(coutCanardPekinLabel, 1, 1);
+    layout->addWidget(canardPekinImageLabel, 1, 1);
+    layout->addWidget(coutCanardPekinLabel, 1, 2);
 
     if (((Clicker*)parent) -> fermier -> getCanardPekin() > 1) {
         layout->addWidget(boutonAcheterCanardColvert, 2, 0);
-        layout->addWidget(coutCanardColvertLabel, 2, 1);
+        layout->addWidget(canardColvertImageLabel, 2, 1);
+        layout->addWidget(coutCanardColvertLabel, 2, 2);
     } else{
         boutonAcheterCanardColvert->hide();
         coutCanardColvertLabel->hide();
     }
     if (((Clicker*)parent) -> fermier -> getCanardColvert() >= 1) {
         layout->addWidget(boutonAcheterCanardPirate, 3, 0);
-        layout->addWidget(coutCanardPirateLabel, 3, 1);
+        layout->addWidget(canardPirateImageLabel, 3, 1);
+        layout->addWidget(coutCanardPirateLabel, 3, 2);
     } else{
         boutonAcheterCanardPirate->hide();
         coutCanardPirateLabel->hide();
     }
     if (((Clicker*)parent) -> fermier -> getCanardPirate() >= 1) {
         layout->addWidget(boutonAcheterCanardSupporter, 4, 0);
-        layout->addWidget(coutCanardSupporterLabel, 4, 1);
+        layout->addWidget(canardSupporterImageLabel, 4, 1);
+        layout->addWidget(coutCanardSupporterLabel, 4, 2);
     } else{
         boutonAcheterCanardSupporter->hide();
         coutCanardSupporterLabel->hide();
     }
     if (((Clicker*)parent) -> fermier -> getCanardSupporter() >= 1) {
         layout->addWidget(boutonAcheterCanardFeu, 5, 0);
-        layout->addWidget(coutCanardFeuLabel, 5, 1);
+        layout->addWidget(canardFeuImageLabel, 5, 1);
+        layout->addWidget(coutCanardFeuLabel, 5, 2);
     } else{
         boutonAcheterCanardFeu->hide();
         coutCanardFeuLabel->hide();
     }
     if (((Clicker*)parent) -> fermier -> getCanardFeu() >= 1) {
         layout->addWidget(boutonAcheterCanardDore, 6, 0);
-        layout->addWidget(coutCanardDoreLabel, 6, 1);
+        layout->addWidget(canardDoreImageLabel, 6, 1);
+        layout->addWidget(coutCanardDoreLabel, 6, 2);
     } else{
         boutonAcheterCanardDore->hide();
         coutCanardDoreLabel->hide();
     }
     if (((Clicker*)parent) -> fermier -> getCanardDore() >= 1) {
         layout->addWidget(boutonAcheterCanardArcEnCiel, 7, 0);
-        layout->addWidget(coutCanardArcEnCielLabel, 7, 1);
+        layout->addWidget(canardArcEnCielImageLabel, 7, 1);
+        layout->addWidget(coutCanardArcEnCielLabel, 7, 2);
     } else{
         boutonAcheterCanardArcEnCiel->hide();
         coutCanardArcEnCielLabel->hide();

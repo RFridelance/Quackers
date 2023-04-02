@@ -38,6 +38,37 @@ class Clicker: public QWidget {
     QLabel* oeufsDoreLabel;
     QLabel* oeufsArcEnCielLabel;
 
+    QPixmap* canardPekinImage;
+    QPixmap* canardColvertImage;
+    QPixmap* canardPirateImage;
+    QPixmap* canardSupporterImage;
+    QPixmap* canardFeuImage;
+    QPixmap* canardDoreImage;
+    QPixmap* canardArcEnCielImage;
+
+    QLabel* canardPekinImageLabel;
+    QLabel* canardColvertImageLabel;
+    QLabel* canardPirateImageLabel;
+    QLabel* canardSupporterImageLabel;
+    QLabel* canardFeuImageLabel;
+    QLabel* canardDoreImageLabel;
+    QLabel* canardArcEnCielImageLabel;
+
+    QPixmap* oeufPekinImage;
+    QPixmap* oeufColvertImage;
+    QPixmap* oeufPirateImage;
+    QPixmap* oeufSupporterImage;
+    QPixmap* oeufFeuImage;
+    QPixmap* oeufDoreImage;
+    QPixmap* oeufArcEnCielImage;
+
+    QLabel* oeufPekinImageLabel;
+    QLabel* oeufColvertImageLabel;
+    QLabel* oeufPirateImageLabel;
+    QLabel* oeufSupporterImageLabel;
+    QLabel* oeufFeuImageLabel;
+    QLabel* oeufDoreImageLabel;
+    QLabel* oeufArcEnCielImageLabel;
 
     QLabel* argentLabel;
 
