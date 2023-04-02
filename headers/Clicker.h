@@ -22,9 +22,26 @@ class Clicker: public QWidget {
     QPushButton* buttonClick;
     QPushButton* buttonShop;
 
-    QLabel* ducksLabel;
-    QLabel* eggsLabel;
-    QLabel* moneyLabel;
+    QLabel* canardPekinLabel;
+    QLabel* canardColvertLabel;
+    QLabel* canardPirateLabel;
+    QLabel* canardSupporterLabel;
+    QLabel* canardFeuLabel;
+    QLabel* canardDoreLabel;
+    QLabel* canardArcEnCielLabel;
+
+    QLabel* oeufsPekinLabel;
+    QLabel* oeufsColvertLabel;
+    QLabel* oeufsPirateLabel;
+    QLabel* oeufsSupporterLabel;
+    QLabel* oeufsFeuLabel;
+    QLabel* oeufsDoreLabel;
+    QLabel* oeufsArcEnCielLabel;
+
+
+    QLabel* argentLabel;
+
+    QPushButton* boutonQuitter;
 
     public:
         Clicker(QWidget *parent = nullptr);

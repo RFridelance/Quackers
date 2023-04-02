@@ -15,7 +15,24 @@ class Shop: public QWidget {
 
     QGridLayout* layout;
 
-    QPushButton* buttonBuyDuck;
+    QLabel* argentLabel;
+
+    QPushButton* boutonAcheterCanardColvert;
+    QPushButton* boutonAcheterCanardPekin;
+    QPushButton* boutonAcheterCanardPirate;
+    QPushButton* boutonAcheterCanardSupporter;
+    QPushButton* boutonAcheterCanardFeu;
+    QPushButton* boutonAcheterCanardDore;
+    QPushButton* boutonAcheterCanardArcEnCiel;
+
+    QLabel* coutCanardPekinLabel;
+    QLabel* coutCanardColvertLabel;
+    QLabel* coutCanardPirateLabel;
+    QLabel* coutCanardSupporterLabel;
+    QLabel* coutCanardFeuLabel;
+    QLabel* coutCanardDoreLabel;
+    QLabel* coutCanardArcEnCielLabel;
+
     QPushButton* buttonSellEggs;
     QPushButton* buttonBack;
 
@@ -23,15 +40,41 @@ class Shop: public QWidget {
 public:
     Shop(QWidget *parent = nullptr);
 
+    //couts des canards
+    int coutCanardPekin = 50;
+    int coutCanardColvert = 500;
+    int coutCanardPirate = 1750;
+    int coutCanardSupporter = 5000;
+    int coutCanardFeu = 12500;
+    int coutCanardDore = 500000;
+    int coutCanardArcEnCiel = 2345678;
+
+    //valeurs des oeufs
+    int valeurOeufsPekin = 100000;
+    int valeurOeufsColvert = 25;
+    int valeurOeufsPirate = 100;
+    int valeurOeufsSupporter = 750;
+    int valeurOeufsFeu = 2000;
+    int valeurOeufsDore = 10000;
+    int valeurOeufsArcEnCiel = 77777;
+
     signals:
 
 public slots:
 
-    void buyDuck();
+    void acheterCanardPekin();
+    void acheterCanardColvert();
+    void acheterCanardPirate();
+    void acheterCanardSupporter();
+    void acheterCanardFeu();
+    void acheterCanardDore();
+    void acheterCanardArcEnCiel();
 
-    void sellEggs();
+    void vendreOeufs();
 
     void back();
+
+    void refreshArgent();
 
 private :
 

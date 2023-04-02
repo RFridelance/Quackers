@@ -13,8 +13,8 @@ Accueil::Accueil() {
     QBoxLayout *layout = new QBoxLayout(QBoxLayout::TopToBottom, tabWidget);
     layout->addWidget(menu, Qt::AlignCenter);
     tabWidget->setLayout(layout);
-    tabWidget->setFixedSize(1000, 500);
-    tabWidget->setGeometry(100, 100, 80, 30);
+    tabWidget->setFixedSize(1000, 600);
+    tabWidget->setGeometry(100, 50, 80, 30);
 
 
     //setCentralWidget(tabWidget);
