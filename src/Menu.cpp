@@ -19,15 +19,15 @@ Menu::Menu(QWidget *parent) : QWidget(parent) {
     //QObject::connect(buttonStart, SIGNAL(clicked()), qApp, SLOT(quit()));
     QObject::connect(buttonStart, &QPushButton::released, this, &Menu::start);
 
-    buttonAbout = new QPushButton("About");
-    QObject::connect(buttonAbout, SIGNAL(clicked()), qApp, SLOT(quit()));
+    /*buttonAbout = new QPushButton("About");
+    QObject::connect(buttonAbout, SIGNAL(clicked()), qApp, SLOT(quit()));*/
 
     buttonQuit = new QPushButton("Quit");
     QObject::connect(buttonQuit, SIGNAL(clicked()), qApp, SLOT(quit()));
 
     buttonLayout = new QVBoxLayout(this);
     buttonLayout->addWidget(buttonStart);
-    buttonLayout->addWidget(buttonAbout);
+    /*buttonLayout->addWidget(buttonAbout);*/
     buttonLayout->addWidget(buttonQuit);
 
 }
